@@ -44,6 +44,11 @@ Authentication keys with the following IDs and passwords will be created:
 
 Step 2: After you have the everything is installed and yubihsm is initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic in order to import your priv_validator_key.json
 <br>
+Example in tmkms.toml:
+```
+auth = { key = 1, password = "double section release consider diet pilot flip shell mother alone what fantasy much answer lottery crew nut reopen stereo square popular addict just animal" }
+```
+<br>
 After password is updated in tmkms.toml, run:
 ```
 tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.json
@@ -52,7 +57,7 @@ tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.jso
 Once key is imported you will need to update the auth= key again to only give it access to sign. The validator key is #4 and the password is listed beside <i>- authkey 0x0004 [validator]: ...kms-validator-password-**************************************</i>
 <br>It will look similar to this:
 ```
-auth = { key = 4, password = "kms-validator-password-**********************************************************" }
+auth = { key = 4, password = "kms-validator-password-1x4anf3n8vqkzm0klrwljhcx72sankcw0" }
 ```
 
 <hr>
