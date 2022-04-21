@@ -26,7 +26,6 @@ groupadd yubihsm
 sudo usermod -aG yubihsm $USER
 source ~/.profile
 
-
 echo "Install TMKMS..."
 cd $HOME
 git clone https://github.com/iqlusioninc/tmkms.git && cd tmkms
@@ -34,12 +33,10 @@ cargo build --release --features=yubihsm
 source ~/.profile
 source ~/.bashrc
 
-
 cd $HOME
 mkdir yubihsm
 tmkms init $HOME/yubihsm
 cp $HOME/osmo-tmkms-installer/osmosis/tmkms.toml $HOME/yubihsm/tmkms.toml
-
 
 echo "Setup TMKMS service..."
 echo "[Unit]
