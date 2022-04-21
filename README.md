@@ -42,7 +42,7 @@ Authentication keys with the following IDs and passwords will be created:
 <hr>
 <br><br>
 
-Step 2: After you have the everything is installed and yubihsm is initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
+Step 2: After you have the everything is installed and yubihsm is initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic in order to import your priv_validator_key.json
 <br>
 After password is updated in tmkms.toml, run:
 ```
