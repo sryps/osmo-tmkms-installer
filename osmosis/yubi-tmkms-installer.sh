@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+echo "Update..."
 sudo apt update
 
 cd $HOME
