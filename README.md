@@ -68,14 +68,13 @@ Step 3: You will need to update your ~/.osmosisd/config/config.toml and comment 
 Step 4: After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
 <br>
 You can now start tmkms service:<br>
-```
-sudo systemctl start tmkms
-```
+
+`sudo systemctl start tmkms
+
 <br>
 and tmkms logs can be viewed using:
-```
-journalctl -u tmkms -f
-```
+`journalctl -u tmkms -f
+
 <br>
 <br><br>
 For in-depth information checkout: <a href="https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md">https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md</a>
