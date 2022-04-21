@@ -9,8 +9,9 @@ Terminal should output new yubihsm passwords...
 record them safely...
 
 then run:
+```
 tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.json
-
+```
 
 NOTES:
 
