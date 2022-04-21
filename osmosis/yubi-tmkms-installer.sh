@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "Update..."
-sudo apt update
+sudo apt update -y
 
 cd $HOME
 git clone https://github.com/sryps/osmo-tmkms-installer.git 
@@ -22,6 +22,7 @@ sudo echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", GROUP="yubihsm"' > /etc/ud
 sudo udevadm control --reload-rules && sudo udevadm trigger
 groupadd yubihsm
 sudo usermod -aG yubihsm $USER
+su - $USER
 source ~/.profile
 
 
@@ -55,6 +56,10 @@ LimitNOFILE=4096
 WantedBy=multi-user.target" > tmkms.service
 
 sudo mv tmkms.service /etc/systemd/system/tmkms.service
+
 sudo systemctl daemon-reload
 sudo systemctl enable tmkms
 sudo systemctl start tmkms
+
+cd $HOME/yubihsm
+tmkms yubihsm setup
