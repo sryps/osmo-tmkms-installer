@@ -69,11 +69,11 @@ Step 4: After priv_validator_key.json is imported onto yubihsm you should encryp
 <br>
 You can now start tmkms service:<br>
 
-`sudo systemctl start tmkms
+> sudo systemctl start tmkms
 
 <br>
 and tmkms logs can be viewed using:
-`journalctl -u tmkms -f
+> journalctl -u tmkms -f
 
 <br>
 <br><br>
