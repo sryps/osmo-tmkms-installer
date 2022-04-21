@@ -2,8 +2,9 @@
 
 Script is incomplete - do not use yet...
 
-<i>bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/main/osmosis/yubi-tmkms-installer.sh)
-               </i>
+```
+bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/main/osmosis/yubi-tmkms-installer.sh)
+```      
 
 Terminal should output new yubihsm passwords...
 record them safely...
