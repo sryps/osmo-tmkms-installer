@@ -47,6 +47,7 @@ Description=Osmosis TMKMS
 After=network.target
 [Service]
 User=$USER
+Environment=PATH=/home/$USER/.cargo/bin
 WorkingDirectory=/home/$USER/.cargo/bin
 ExecStart=/home/$USER/.cargo/bin/tmkms start -c /home/$USER/yubihsm/tmkms.toml
 Restart=always
