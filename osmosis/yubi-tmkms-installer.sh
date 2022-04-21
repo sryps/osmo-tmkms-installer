@@ -19,7 +19,9 @@ sudo apt install gcc -y
 
 echo "Allow YubiHSM USB permissions..."
 sudo echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", GROUP="yubihsm"' > /etc/udev/rules.d/10-yubihsm.rules
+echo "Restart UDEV..."
 sudo udevadm control --reload-rules && sudo udevadm trigger
+echo "Create yubihsm group..."
 groupadd yubihsm
 sudo usermod -aG yubihsm $USER
 source ~/.profile
