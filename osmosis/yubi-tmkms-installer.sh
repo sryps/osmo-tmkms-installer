@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+sudo apt update
 
 cd $HOME
 git clone https://github.com/sryps/osmo-tmkms-installer.git 
