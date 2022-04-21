@@ -10,7 +10,7 @@ Make sure to run as non-root user with sudo permissions.
 <hr>
 <br><br>
 
-Step 1: Run this script by pasting this into terminal:
+Step 1: Run installer script by pasting this into terminal:
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/main/osmosis/yubi-tmkms-installer.sh)
 ```      
