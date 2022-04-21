@@ -17,7 +17,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/mai
 ```      
 <br><br>
 
-Terminal should output new yubihsm passwords. You will need this to encrypt and decrypt your validator key...
+After going through all prompts, terminal should output new yubihsm passwords. You will need these to encrypt and decrypt your validator key...
 Output should look like this (record them safely):
 ```
 $ tmkms yubihsm setup
@@ -39,17 +39,22 @@ Authentication keys with the following IDs and passwords will be created:
 
 *** Are you SURE you want erase and reinitialize this HSM? (y/N):
 ```
-
+<br>
 <hr>
 <br><br>
 
-Step 2: After you have the yubihsm initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
+Step 2: After you have the everything is installed and yubihsm is initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
 <br>
 After password is updated in tmkms.toml, run:
 ```
 tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.json
 ```
-
+<br><hr><br><br>
+Once key is imported you will need to update the auth= key again to only give it access to sign. The validator key is #4 and the password is listed beside <i>- authkey 0x0004 [validator]: ...kms-validator-password-**************************************</i>
+<br>It will look similar to this:
+```
+auth = { key = 4, password = "kms-validator-password-**********************************************************" }
+```
 
 <hr>
 <br><br>
