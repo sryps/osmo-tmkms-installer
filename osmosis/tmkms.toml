@@ -1,0 +1,22 @@
+[[chain]]
+id = "osmosis-1"
+key_format = { type = "bech32", account_key_prefix = "osmopub", consensus_key_prefix = "osmovalconspub" }
+state_file = "./osmo_priv_validator_state.json"
+
+## Validator configuration
+[[validator]]
+addr = "tcp://127.0.0.1:26658"
+chain_id = "osmosis-1"
+reconnect = true 
+
+# ***.key file generated on "tmkms init"
+secret_key = "./secrets/kms-identity.key"
+protocol_version = "v0.34"
+
+## Signing provider configuration
+# enable the `yubihsm` feature to use this backend
+[[providers.yubihsm]]
+adapter = { type = "usb" }
+
+auth = { key = 1, password = "password" }
+keys = [{ chain_ids = ["osmosis-1"], key = 1 }]
