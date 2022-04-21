@@ -5,6 +5,7 @@
 
 ## Requirements
 Make sure yubihsm is plugged into server usb port before starting.
+<br>
 Make sure to run as non-root user.
 
 <hr>
@@ -43,7 +44,8 @@ Authentication keys with the following IDs and passwords will be created:
 <br><br>
 
 Step 2: After you have the yubihsm initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
-After password is updated, run:
+<br>
+After password is updated in tmkms.toml, run:
 ```
 tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.json
 ```
