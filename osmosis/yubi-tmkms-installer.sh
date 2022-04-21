@@ -60,7 +60,6 @@ sudo mv tmkms.service /etc/systemd/system/tmkms.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable tmkms
-sudo systemctl start tmkms
 
 cd $HOME/yubihsm
 tmkms yubihsm setup
