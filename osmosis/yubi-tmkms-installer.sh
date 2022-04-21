@@ -22,7 +22,6 @@ sudo echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", GROUP="yubihsm"' > /etc/ud
 sudo udevadm control --reload-rules && sudo udevadm trigger
 groupadd yubihsm
 sudo usermod -aG yubihsm $USER
-su - $USER
 source ~/.profile
 
 
