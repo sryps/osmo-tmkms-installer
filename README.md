@@ -2,11 +2,13 @@
 
 ## Script is incomplete - do not use yet...
 * Setup on Ubuntu 20.4
+<br><br>
 
 Step 1: Run this script by pasting this into terminal:
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/main/osmosis/yubi-tmkms-installer.sh)
 ```      
+<br><br>
 
 Terminal should output new yubihsm passwords...
 Output should look like this (record them safely):
@@ -31,6 +33,7 @@ Authentication keys with the following IDs and passwords will be created:
 *** Are you SURE you want erase and reinitialize this HSM? (y/N):
 ```
 
+<br><br>
 
 Step 2: After you have the yubihsm initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
 After password is updated, run:
