@@ -6,7 +6,9 @@ git clone https://github.com/sryps/osmo-tmkms-installer.git
  
 # Install dependencies Rust, libusb, gcc
 echo "Installing dependencies..."
-read -p "When installing Rust, press enter at installation prompt (not 1)..." enter
+echo ""
+echo ""
+read -p "When installing Rust, press ENTER at installation prompt (not 1)..." enter
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt install libusb-1.0-0-dev -y
 sudo apt install gcc -y
@@ -23,6 +25,7 @@ source ~/.profile
 echo "Install TMKMS..."
 cd $HOME
 git clone https://github.com/iqlusioninc/tmkms.git && cd tmkms
+source ~/.profile
 cargo build --release --features=yubihsm
 cargo install tmkms --features=yubihsm
 
