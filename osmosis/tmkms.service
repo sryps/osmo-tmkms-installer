@@ -1,0 +1,12 @@
+[Unit]
+Description=Osmosis TMKMS
+After=network.target
+[Service]
+User=shawn
+WorkingDirectory=/home/shawn/.cargo/bin
+ExecStart=/home/shawn/.cargo/bin/tmkms start -c /home/shawn/yubihsm/tmkms.toml
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target

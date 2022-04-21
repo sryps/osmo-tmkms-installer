@@ -28,3 +28,27 @@ cd $HOME
 mkdir yubihsm
 tmkms init $HOME/yubihsm
 cp $HOME/osmo-tmkms-installer/tmkms.toml $HOME/yubihsm/tmkms.toml
+
+
+
+
+
+
+
+echo "Setup TMKMS service..."
+echo "[Unit]
+Description=Osmosis TMKMS
+After=network.target
+[Service]
+User=$USER
+WorkingDirectory=/home/$USER/.cargo/bin
+ExecStart=/home/$USER/.cargo/bin/tmkms start -c /home/$USER/yubihsm/tmkms.toml
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target" > tmkms.service
+
+sudo mv tmkms.service /etc/systemd/system/tmkms.service
+sudo systemctl enable tmkms
+sudo systemctl start tmkms
