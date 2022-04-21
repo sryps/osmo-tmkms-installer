@@ -27,7 +27,7 @@ cargo install tmkms --features=yubihsm
 cd $HOME
 mkdir yubihsm
 tmkms init $HOME/yubihsm
-cp $HOME/osmo-tmkms-installer/tmkms.toml $HOME/yubihsm/tmkms.toml
+cp $HOME/osmo-tmkms-installer/osmosis/tmkms.toml $HOME/yubihsm/tmkms.toml
 
 
 
@@ -50,5 +50,6 @@ LimitNOFILE=4096
 WantedBy=multi-user.target" > tmkms.service
 
 sudo mv tmkms.service /etc/systemd/system/tmkms.service
+sudo systemctl daemon-reload
 sudo systemctl enable tmkms
 sudo systemctl start tmkms

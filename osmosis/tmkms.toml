@@ -5,7 +5,7 @@ state_file = "./osmo_priv_validator_state.json"
 
 ## Validator configuration
 [[validator]]
-addr = "tcp://127.0.0.1:26658"
+addr = "tcp://127.0.0.1:46658"
 chain_id = "osmosis-1"
 reconnect = true 
 
