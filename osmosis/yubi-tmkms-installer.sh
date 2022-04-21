@@ -26,6 +26,7 @@ echo "Install TMKMS..."
 cd $HOME
 git clone https://github.com/iqlusioninc/tmkms.git && cd tmkms
 source ~/.profile
+source ~/.bashrc
 cargo build --release --features=yubihsm
 cargo install tmkms --features=yubihsm
 
