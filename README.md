@@ -1,12 +1,11 @@
 # Osmosis TMKMS with YubiHSM
 
-## Script is incomplete - do not use yet...
 * Setup on Ubuntu 20.4
 
 ## Requirements
 Make sure yubihsm is plugged into server usb port before starting.
 <br>
-Make sure to run as non-root user.
+Make sure to run as non-root user with sudo permissions.
 
 <hr>
 <br><br>
@@ -58,7 +57,7 @@ auth = { key = 4, password = "kms-validator-password-***************************
 
 <hr>
 <br><br>
-After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
+Step 3: After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
 
-
+<br><br>
 For in-depth information checkout: <a href="https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md">https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md</a>
