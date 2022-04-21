@@ -28,11 +28,10 @@ source ~/.profile
 
 echo "Install TMKMS..."
 cd $HOME
-mkdir tmkms
-cd tmkms
+git clone https://github.com/iqlusioninc/tmkms.git && cd tmkms
+cargo build --release --features=yubihsm
 source ~/.profile
 source ~/.bashrc
-cargo install tmkms --features=yubihsm
 
 
 cd $HOME
