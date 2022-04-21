@@ -2,6 +2,12 @@
 
 ## Script is incomplete - do not use yet...
 * Setup on Ubuntu 20.4
+
+## Requirements
+Make sure yubihsm is plugged into server usb port before starting.
+Make sure to run as non-root user.
+
+<hr>
 <br><br>
 
 Step 1: Run this script by pasting this into terminal:
@@ -10,7 +16,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/sryps/osmo-tmkms-installer/mai
 ```      
 <br><br>
 
-Terminal should output new yubihsm passwords...
+Terminal should output new yubihsm passwords. You will need this to encrypt and decrypt your validator key...
 Output should look like this (record them safely):
 ```
 $ tmkms yubihsm setup
@@ -33,6 +39,7 @@ Authentication keys with the following IDs and passwords will be created:
 *** Are you SURE you want erase and reinitialize this HSM? (y/N):
 ```
 
+<hr>
 <br><br>
 
 Step 2: After you have the yubihsm initialized you will need to replace the "password" in ~/home/$USER/yubihsm/tmkms.toml with the 24 word mnemonic before importing your priv_validator_key.json
@@ -42,12 +49,9 @@ tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.jso
 ```
 
 
-
-NOTES:
-
-*Run as non-root user
-
-*Remove ~/.osmosisd/config/priv_validator_key.json after imported & encrypted on yubihsm
+<hr>
+<br><br>
+After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
 
 
 For in-depth information checkout: <a href="https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md">https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md</a>
