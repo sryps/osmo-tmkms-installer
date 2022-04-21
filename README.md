@@ -59,10 +59,13 @@ Once key is imported you will need to update the auth= key again to only give it
 ```
 auth = { key = 4, password = "kms-validator-password-1x4anf3n8vqkzm0klrwljhcx72sankcw0" }
 ```
-
+<br><hr><br><br>
+Step 3: You will need to update your ~/.osmosisd/config/config.toml and comment out the priv_validator_key and fill out the priv_validator_laddr="tcp://localhost:46658"
+<br><i>Feel free to edit tmkms.toml and put your own port number</i>
+<br>
 <hr>
 <br><br>
-Step 3: After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
+Step 4: After priv_validator_key.json is imported onto yubihsm you should encrypt it using directions from iqlusion in link below and store offline.
 
 <br><br>
 For in-depth information checkout: <a href="https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md">https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md</a>
