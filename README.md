@@ -48,3 +48,6 @@ NOTES:
 *Run as non-root user
 
 *Remove ~/.osmosisd/config/priv_validator_key.json after imported & encrypted on yubihsm
+
+
+For in-depth information checkout: <a href="https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md">https://github.com/iqlusioninc/tmkms/blob/main/README.yubihsm.md</a>
