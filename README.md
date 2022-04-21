@@ -54,7 +54,7 @@ After password is updated in tmkms.toml, run:
 tmkms yubihsm keys import -t json -i 1 ~/.osmosisd/config/priv_validator_key.json
 ```
 <br><hr><br><br>
-Once key is imported you will need to update the auth= key again to only give it access to sign. The validator key is #4 and the password is listed beside <i>- authkey 0x0004 [validator]: ...kms-validator-password-**************************************</i>
+Once key is imported you will need to update the auth= key again in tmkms.toml to only give it access to sign. The validator key is #4 and the password is listed beside <i>- authkey 0x0004 [validator]: ...kms-validator-password-**************************************</i>
 <br>It will look similar to this:
 ```
 auth = { key = 4, password = "kms-validator-password-1x4anf3n8vqkzm0klrwljhcx72sankcw0" }
