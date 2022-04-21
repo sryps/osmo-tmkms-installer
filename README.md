@@ -1,4 +1,4 @@
-# tmkms
+# Osmosis TMKMS with YubiHSM
 
 ## Script is incomplete - do not use yet...
 * Setup on Ubuntu 20.4
